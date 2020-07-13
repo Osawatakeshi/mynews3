@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
+    
     return view('welcome');
 });
 
-Auth::routes();
+
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,4 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::post('profile/edit', 'Admin\ProfileController@update');
 });
+
+Auth::routes();
