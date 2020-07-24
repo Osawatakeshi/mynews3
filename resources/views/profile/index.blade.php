@@ -27,21 +27,21 @@ section('content')
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <td width="10%">ID</td>
-                                <td width="20%">名前(name)</td>
-                                <td width="20%">性別(gender)</td>
-                                <td width="20%">趣味(hobby)</td>
-                                <td width="50%">自己紹介(introduction)</td>
+                                <th width="10%">ID</th>
+                                <th width="20%">名前(name)</th>
+                                <th width="20%">性別(gender)</th>
+                                <th width="20%">趣味(hobby)</th>
+                                <th width="50%">自己紹介(introduction)</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $posts)
                                 <tr>
-                                    <td>{{ $profile->id }}</td>
-                                    <td>{{ $profile->name }}</td>
-                                    <td>{{ $profile->gender }}</td>
-                                    <td>{{ $profile->hobby }}</td>
-                                    <td>{{ $profile->introduction }}</td>
+                                    <th>{{ $profile->id }}</th>
+                                    <td>{{ \Str::limit($profile->name, 100) }}</td>
+                                    <td>{{ \Str::limit($profile->gender, 100) }}</td>
+                                    <td>{{ \Str::limit($profile->hobby, 100) }}</td>
+                                    <td>{{ \Str::limit($profile->introduction, 250) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
