@@ -9,6 +9,8 @@ use App\Profile;
 class ProfileController extends Controller
 {
     //
+    
+    
     public function index(Request $request)
   {
       $cond_title = $request->cond_tittle;

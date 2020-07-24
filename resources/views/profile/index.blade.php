@@ -1,4 +1,4 @@
-@expand('layout.admin')
+@expand('layout.profile')
 @section('title', '登録済みのプロフィール一覧')
 
 section('content')
